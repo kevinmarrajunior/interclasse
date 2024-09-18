@@ -1,0 +1,137 @@
+// Exercício 1: Informações do Time
+let nomeTime = "JOAO GOMES FC"
+let cor = "vermelho"
+let turma = "1m"
+let mascote = "fefo"
+ 
+console.log(`Nome do meu time é: ${nomeTime}, a cor do meu time é ${cor}, a minha turma é ${turma}, nome do meu mascote é ${mascote}`)
+ 
+// Exercício 2: Entrada de Dados
+let nomeDoTime = prompt("Qual o nome do time?")
+let corDoTime = prompt("Qual a cor do time?")
+let turmaDoTime = prompt("Qual é sua turma?")
+let mascoteDoTime = prompt("Qual é o mascote do time?")
+ 
+console.log(`O nome do time é ${nomeDoTime}, a cor do time é ${corDoTime}, nome da turma é ${turmaDoTime}, e o mascote é ${mascoteDoTime}`)
+console.log(`Bem-vindo, ${nomeDoTime} da turma ${turmaDoTime}!`)
+ 
+// Exercício 3: Definindo um Grito de Guerra
+let gritoGuerra = prompt("Digite o grito de guerra do time:")
+console.log(gritoGuerra.toUpperCase())
+console.log(gritoGuerra.toLowerCase())
+ 
+// Exercício 4: Lista de Atletas
+let jogadores = ['gomes', 'kevin', 'pinter', 'fefo', 'vini']
+console.log(jogadores.join(", "))
+ 
+jogadores.push(prompt("Adicione um atleta à lista:"))
+console.log(jogadores)
+ 
+// Exercício 5: Escolhendo um Esporte
+function selecionarEsporte() {
+    let esporte = prompt("Qual seu esporte: FIFA, futebol, vôlei, basquete ou xadrez?").toLowerCase()
+ 
+    if (esporte === 'fifa') {
+        console.log('neymarcraque')
+    } else if (esporte === 'futebol') {
+        console.log('receba')
+    } else if (esporte === 'vôlei') {
+        console.log('Esporte escolhido: vôlei')
+    } else if (esporte === 'basquete') {
+        console.log('Esporte escolhido: basquete')
+    } else if (esporte === 'xadrez') {
+        console.log('Esporte escolhido: xadrez')
+    } else {
+        console.log('Resposta não existente')
+    }
+}
+ 
+// Executar seleção de esporte
+selecionarEsporte()
+ 
+// Exercício 6: Listando Atletas com Laços
+console.log("Os atletas do time são:")
+for (let i = 0; i < jogadores.length ;i++) {
+    console.log(`${i + 1}. ${jogadores[i]}`)
+}
+ 
+// Exercício 7: Função para Listar Atletas
+function listarAtletas() {
+    console.log("Os atletas do time são:", jogadores.join(", "))
+}
+listarAtletas()
+ 
+// Exercício 8: Criando um Objeto para o Time
+const time = {
+    nome: nomeDoTime,
+    cor: corDoTime,
+    turma: turmaDoTime,
+    mascote: mascoteDoTime,
+    atletas: jogadores,
+    esportes: []
+}
+ 
+// Exercício 9: Gerenciando a Lista de Esportes
+function gerenciarEsportes() {
+    for (let i = 0 ;i < 2 ;i++) {
+        let esporte = prompt("Escolha um esporte: FIFA, futebol, vôlei, basquete ou xadrez")
+        time.esportes.push(esporte)
+    }
+    console.log("Esportes escolhidos:", time.esportes.join(", "))
+}
+ 
+// Adicionando e mostrando esportes escolhidos
+gerenciarEsportes()
+ 
+// Exercício 10: Mostrar Perfil do Time
+function mostrarPerfilTime() {
+    console.log(`Nome do time: ${time.nome}`)
+    console.log(`Cor do time: ${time.cor}`)
+    console.log(`Turma: ${time.turma}`)
+    console.log(`Mascote: ${time.mascote}`)
+    listarAtletas()
+    console.log(`Esportes escolhidos: ${time.esportes.join(", ")}`)
+ 
+    if (time.atletas.length > 5) {
+        console.log("Parabéns! Você tem vários atletas.")
+    }
+}
+ 
+// Exercício 11: Escolhendo um Mascote
+let novoMascote = prompt("Adicione um novo mascote para o time:")
+time.mascote = novoMascote
+console.log(`O novo mascote do time é ${time.mascote}!`)
+ 
+// Exercício 12: Pontuação do Time
+time.pontuacao = 0
+function pontuacao() {
+    let qntdEsportes = prompt("Quantos esportes você jogou? 1, 2, 3, 4 ou 5?")
+    if (qntdEsportes == 1) {
+        time.pontuacao += 10
+    } else if (qntdEsportes == 2) {
+        time.pontuacao += 20
+    } else if (qntdEsportes == 3) {
+        time.pontuacao += 30
+    } else if (qntdEsportes == 4) {
+        time.pontuacao += 40
+    } else if (qntdEsportes == 5) {
+        time.pontuacao += 50
+    }
+    console.log(`Pontuação total: ${time.pontuacao}`)
+}
+ 
+// Exercício 13: Encerramento da Interseries
+function encerrarInterseries() {
+    mostrarPerfilTime()
+    pontuacao()
+    console.log("Encerramento da Interseries: Parabéns aos atletas pelo esforço!")
+   
+    if (time.pontuacao > 50) {
+        console.log("Parabéns, seu time obteve uma excelente pontuação!")
+    }
+}
+ 
+// Executar funções finais
+mostrarPerfilTime()
+pontuacao()
+encerrarInterseries()
